@@ -6,11 +6,19 @@ const client = new discord.Client();
 client.on("ready", () => {
     console.log(`${client.user.tag} is ready`);
     function YousamPower() {
-        let targetguild0 = client.guilds.cache.get("812768125551640616") //***por kon
+        let targetguild0 = client.guilds.cache.get("Server-ID") //***por kon
         let status = [`${targetguild0.memberCount} Members`] //***por kon status haro
         let Power = Math.floor(Math.random() * status.length);
         client.user.setActivity(status[Power], { type: "WATCHING" });
     }; setInterval(YousamPower, 2000)
+    
+        function chNickname() {
+        const targetguild = client.guilds.cache.get("SERVER-ID") //***por kon
+        const me = targetguild.members.cache.get(client.user.id)
+        let name = [] //***por kon nikename
+        for(let i = 0; i < name.length; i++ )
+        me.setNickname(name[i])
+    }; setInterval(chNickname, 10000)
 
     const channel = client.channels.cache.get("814175233485438986"); //***por kon
     if (!channel) return console.error("Channel Vojod Nadarad");
@@ -20,10 +28,10 @@ client.on("ready", () => {
         console.error(e);
     });
     function connectVoice() {
-        const channel = client.channels.cache.get("814175233485438986"); //***por kon
+        const channel = client.channels.cache.get("Voice-Channel-ID"); //***por kon
         if (!channel) return console.error("Channel Vojod Nadarad");
-        if (!client.voice.connections.get("812768125551640616")) { //***por kon
-            const channel = client.channels.cache.get("814175233485438986"); //***por kon
+        if (!client.voice.connections.get("Server-ID")) { //***por kon
+            const channel = client.channels.cache.get("Voice-Channel-ID"); //***por kon
             if (!channel) return console.error("Channel Vojod Nadarad");
             channel.join().then(connection => {
                 console.log("ba Movafaghiat Connect shod.");
@@ -89,5 +97,25 @@ client.on('message', async message => {
             message.reply("Lotfan yek id vared konid")
         }
     }
+     if(command == `ping`){
+  message.channel.send(`✅ - Ping : **${client.ws.ping}ms** !`)
+}
+             if (command === "say") {
+    const text = args.join(" ")
+    if(!text) return message.channel.send("You have not specified something to say").then(msg => {
+        msg.delete({ timeout: 30000 })
+    })
+    message.channel.send(text)
+    
+    }
+        if (command === "rps") {
+        const options = [
+            "rock :shell: ",
+            "paper :newspaper2:",
+            "scissors :scissors: "
+        ]
+        const option = options[Math.floor(Math.random() * options.length)]
+        message.channel.send(`You got ${option}`)
+    } 
 });
 client.login(config.token);
