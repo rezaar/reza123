@@ -20,7 +20,7 @@ client.on("ready", () => {
         me.setNickname(name[i])
     }; setInterval(chNickname, 10000)
 
-    const channel = client.channels.cache.get("814175233485438986"); //***por kon
+    const channel = client.channels.cache.get("Voice-Channel-ID"); //***por kon
     if (!channel) return console.error("Channel Vojod Nadarad");
     channel.join().then(connection => {
         console.log("ba Movafaghiat Connect shod.");
