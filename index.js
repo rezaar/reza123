@@ -133,7 +133,7 @@ client.on('message', async message => {
 }
   
     else if (command === "server") {
-	message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+      message.channel.send(`Server name: ${message.guild.name}\nServer owner: ${message.guild.owner}\nMember Count: ${message.guild.memberCount}\nId Server: ${message.guild.id}`);
 }
   
   
