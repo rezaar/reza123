@@ -98,7 +98,7 @@ client.on('message', async message => {
         }
     }
      if(command == `ping`){
-  message.channel.send(`✅ - Ping : **${client.ws.ping}ms** !`)
+  message.channel.send(`✅ - Ping : **${client.ws.ping}ms** !\n✅ - Pong **(${Date.now() - message.createdTimestamp}ms)**`)
 }
              if (command === "say") {
     const text = args.join(" ")
