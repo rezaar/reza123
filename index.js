@@ -133,7 +133,7 @@ client.on('message', async message => {
 }
   
     else if (command === "server") {
-      message.channel.send(`➡️ Server name: ${message.guild.name}\n➡️ Server owner: ${message.guild.owner}\n➡️ Created on: ${message.guild.createdAt}\n➡️ Member Count: ${message.guild.memberCount}\n➡️ Role Count: ${message.guild.roles}\n➡️ Channel Count: ${message.guild.channels}\n➡️ Region: ${message.guild.region}\n➡️ verification Level: ${message.guild.verificationLevel}\n➡️ Id Server: ${message.guild.id} `);
+      message.channel.send(`➡️ Server name: ${message.guild.name}\n➡️ Server owner: ${message.guild.owner}\n➡️ Created on: ${message.guild.createdAt}\n➡️ Member Count: ${message.guild.memberCount}\n➡️ Role Count: ${message.guild.roles.cache.size}\n➡️ Channel Count: ${message.guild.channels.cache.size}\n➡️ Emoji: ${message.guild.emojis.cache.size}\n➡️ Region: ${message.guild.region}\n➡️ verification Level: ${message.guild.verificationLevel}\n➡️ Id Server: ${message.guild.id} `);
 }
   
   
