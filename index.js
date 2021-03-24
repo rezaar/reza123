@@ -2,6 +2,8 @@ const config = require(`./config.json`);
 const discord = require('discord.js')
 const prefix = config.prefix
 const client = new discord.Client();
+const { MessageEmbed } = require("discord.js");
+const Discord = require('discord.js');
 
 client.on("ready", () => {
     console.log(`${client.user.tag} is ready`);
@@ -41,6 +43,20 @@ client.on("ready", () => {
         }
     }; setInterval(connectVoice, 120000)
 });
+
+
+client.on('message', message => {
+  if (message.author.bot || message.channel.type == "dm") return;
+const cmd = message.content.toLowerCase() 
+const messageArry = cmd.split(" ")
+const command = messageArry[0]
+if(command == 'reza'){
+    message.channel.send('best')
+}
+  
+});
+
+
 
 client.on('message', async message => {
     let messageArry = message.content.split(" ")
