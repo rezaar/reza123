@@ -149,7 +149,7 @@ client.on('message', async message => {
 }
   
     else if (command === "server") {
-      message.channel.send(`➡️ Server name: ${message.guild.name}\n➡️ Server owner: ${message.guild.owner}\n➡️ Created on: ${message.guild.createdAt}\n➡️ Member Count: ${message.guild.memberCount}\n➡️ Role Count: ${message.guild.roles.cache.size}\n➡️ Channel Count: ${message.guild.channels.cache.size}\n➡️ Emoji: ${message.guild.emojis.cache.size}\n➡️ Region: ${message.guild.region}\n➡️ verification Level: ${message.guild.verificationLevel}\n➡️ Id Server: ${message.guild.id} `);
+      message.channel.send(`➡️ Server name: ${message.guild.name}\n\n➡️ Server owner: ${message.guild.owner}\n\n➡️ Created on: ${message.guild.createdAt}\n\n➡️ Member Count: ${message.guild.memberCount}\n\n➡️ Role Count: ${message.guild.roles.cache.size}\n\n➡️ Channel Count: ${message.guild.channels.cache.size} => category: ${message.guild.channels.cache.filter(ch => ch.type == 'category').size} , text channel : ${message.guild.channels.cache.filter(ch => ch.type == 'text').size} , voice channel: ${message.guild.channels.cache.filter(ch => ch.type == 'voice').size} \n\n➡️ Emoji: ${message.guild.emojis.cache.size}\n\n➡️ Region: ${message.guild.region}\n\n➡️ verification Level: ${message.guild.verificationLevel}\n\n➡️ Id Server: ${message.guild.id}\nicon_url: ${message.guild.iconURL({format: 'png', dynamic: true, size: 4096})}`);
 }
   
   
