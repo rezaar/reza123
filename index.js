@@ -53,7 +53,18 @@ const command = messageArry[0]
 if(command == 'reza'){
     message.channel.send('best')
 }
-  
+    if(command == 'hi'|| command == 'hello' ){
+message.reply('Hi');
+  }
+  if (message.content === '!fruits') {
+	message.react('🍎');
+	message.react('🍊');
+	message.react('🍇');
+        message.react('🍑');
+        message.react('🍌');
+        message.react('🍓');
+        message.react('🍍');
+}
 });
 
 
