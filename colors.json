@@ -3,6 +3,11 @@
     "red": "#ff0000",
     "black": "#000000",
     "yellow": "#fff000",
-    "blue": "#0000ff"
+    "blue": "#0000ff",
+    "green":"00ff00",
+    "orange":"ffa500",
+    "gold":"fcba03",
+	"pink":"f47fff",
+	"sky":"87e7eb"
     
 }
