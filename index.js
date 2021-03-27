@@ -45,6 +45,61 @@ client.on("ready", () => {
 });
 
 
+client.on('guildMemberAdd', member => {
+
+    let welcomeChannel = client.channels.cache.get("Channel_ID") //inja vared kon
+    if(welcomeChannel){
+        
+        let welcomeEmbed = new discord.MessageEmbed()
+        if(member.user.bot){
+
+            welcomeEmbed.setColor(colors.blue)
+            welcomeEmbed.setAuthor(`${member.guild.name}`)
+            welcomeEmbed.setDescription(` <@${member.user.id}> join`)
+            welcomeEmbed.setThumbnail(member.user.displayAvatarURL())
+            welcomeEmbed.setFooter(`${client.user.username} (=`)
+            welcomeChannel.send(welcomeEmbed)
+        }else{
+            welcomeEmbed.setColor(colors.aqua)
+            welcomeEmbed.setAuthor(`${member.guild.name}`)
+            welcomeEmbed.setDescription(`سلام <@${member.user.id}> به سرور ما خوش اومدی حتما یه سر بزن بهامیدوارم از سرورمون خوشت بیاد`)
+            welcomeEmbed.setThumbnail(member.user.displayAvatarURL())
+            welcomeEmbed.setFooter(`${client.user.username}  (=`)
+            welcomeChannel.send(welcomeEmbed)
+        }
+
+    }else{
+        console.log("Welcome Channel Yaft Nashod")
+    }
+})
+client.on('guildMemberRemove', member => {
+     leavechannel = client.channels.cache.get("Channel_ID") //inja vared kon
+    if(leavechannel){
+        
+        let leaveEmbed = new discord.MessageEmbed()
+        if(member.user.bot){
+
+            leaveEmbed.setColor(colors.orange)
+            leaveEmbed.setAuthor(`${member.guild.name}`)
+            leaveEmbed.setDescription(` <@${member.user.id}> left`)
+            leaveEmbed.setThumbnail(member.user.displayAvatarURL())
+            leaveEmbed.setFooter(`${client.user.username} (=`)
+            leaveChannel.send(leaveEmbed)
+        }else{
+            leaveEmbed.setColor(colors.red)
+            leaveeEmbed.setAuthor(`${member.guild.name}`)
+            leaveEmbed.setDescription(` <@${member.user.id}>  از سرور رفت`)
+            leaveEmbed.setThumbnail(member.user.displayAvatarURL())
+            leaveEmbed.setFooter(`${client.user.username}  (=`)
+            leaveChannel.send(leaveEmbed)
+        }
+
+    }else{
+        console.log("leave Channel Yaft Nashod")
+    }
+})
+
+
 client.on('message', message => {
   if (message.author.bot || message.channel.type == "dm") return;
 const cmd = message.content.toLowerCase() 
